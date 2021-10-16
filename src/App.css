@@ -4,6 +4,19 @@
   padding: 0 25px;
 }
 
+.Navigation {
+  padding: 50px;
+}
+
+.intro {
+  align-items: center;
+  display: flex;
+  height: 50vh;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  justify-content: center;
+}
+
 .CurrencyContainer {
   align-content: center;
   border: 2px solid black;
@@ -16,8 +29,8 @@
 }
 
 .CurrencyHeader {
-  font-weight: bold;
   color: blue;
+  font-weight: bold;
 }
 
 .CurrencyInput {

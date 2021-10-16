@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import { Alert, Button, Container } from 'react-bootstrap';
+import { Alert, Button, Container, Nav, Navbar } from 'react-bootstrap';
 
 const API_KEY = '323ba17b97933a13e018';
 
@@ -38,13 +38,23 @@ function Home () {
   }
   
   return (
-    <Container fluid="md" className="CurrencyContainer">
-      <h1 className="CurrencyHeader">Currency Converter</h1>
-      <h2>1 {from} = {rate[`${from}_${to}`]} {to}</h2>
-      <input className="CurrencyInput" type="text" value={from} onChange={(e) => setFrom(e.target.value)} />
-      <input className="CurrencyInput" type="text" value={to} onChange={(e) => setTo(e.target.value)}/>
-      <Button size="sm" onClick={()=> {getRate(from, to);}}>Convert Currency</Button>
-      <Alert variant="light">Type currency into the textbox and then click the convert button.</Alert>
+    <Container>
+      <Navbar bg="light" expand="lg" className="Navigation">
+        <Navbar.Brand href="home">Midterm Project</Navbar.Brand>
+        <Nav.Link href="#CurrencyContainer">Currency Exchange Rate</Nav.Link>
+        <Nav.Link>Cryptocurrency</Nav.Link>
+      </Navbar>
+        <Container className="intro">
+          Welcome to my midterm project website...
+        </Container>
+        <Container fluid="md" className="CurrencyContainer" id="CurrencyContainer">
+          <h1 className="CurrencyHeader">Currency Converter</h1>
+          <h2>1 {from} = {rate[`${from}_${to}`]} {to}</h2>
+          <input className="CurrencyInput" type="text" value={from} onChange={(e) => setFrom(e.target.value)} />
+          <input className="CurrencyInput" type="text" value={to} onChange={(e) => setTo(e.target.value)}/>
+          <Button size="sm" onClick={()=> {getRate(from, to);}}>Convert Currency</Button>
+          <Alert variant="light">Type currency into the textbox and then click the convert button.</Alert>
+        </Container>
     </Container>
   )
 }

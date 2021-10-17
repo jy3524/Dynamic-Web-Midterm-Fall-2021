@@ -5,16 +5,32 @@
 }
 
 .Navigation {
+  background-color: transparent;
   padding: 50px;
 }
 
-.intro {
+.Intro {
   align-items: center;
   display: flex;
-  height: 50vh;
+  height: 100vh;
   font-family: 'Courier New', Courier, monospace;
   font-size: 30px;
+  font-weight: bold;
   justify-content: center;
+}
+
+.CryptoIntro {
+  align-items: center;
+  display: flex;
+  height: 30vh;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  font-weight: bold;
+  justify-content: center;
+}
+
+.CryptoImage {
+  width: 80px;
 }
 
 .CurrencyContainer {
@@ -35,4 +51,18 @@
 
 .CurrencyInput {
   margin: 20px;
+}
+
+.increase {
+  color: red;
+}
+
+.decrease {
+  color: green;
+}
+
+.Icon {
+  align-items: center;
+  bottom: 10px;
+  position: absolute;
 }

@@ -46,7 +46,7 @@ function Home () {
     });
     
     const randomNum = getRandomInt(allCoins.length);
-    const coin = allCoins[randomNum];
+    const coin = allCoins[randomNum]
     setCoins([coin]);
   }
 

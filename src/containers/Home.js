@@ -21,8 +21,8 @@ function Home () {
     .get(URL_Coin)
     .then(function (response) {
       console.log(response.data);
-      setAllCoins(response.data)
-      setCoins(response.data)
+      setAllCoins(response.data);
+      setCoins(response.data);
     })
     .catch(function (error) {
       console.log(error)
@@ -46,8 +46,8 @@ function Home () {
     });
     
     const randomNum = getRandomInt(allCoins.length);
-    const coin = allCoins[randomNum]
-    setCoins([coin])
+    const coin = allCoins[randomNum];
+    setCoins([coin]);
   }
 
   return (

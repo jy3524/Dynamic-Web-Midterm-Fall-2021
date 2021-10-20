@@ -70,3 +70,10 @@
   bottom: 10px;
   position: absolute;
 }
+
+.MainButton {
+  align-items: center;
+  display: flex;
+  height: 15vh;
+  justify-content: center;
+}

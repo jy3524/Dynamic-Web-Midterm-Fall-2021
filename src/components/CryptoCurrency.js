@@ -17,14 +17,14 @@ const CryptoCurrency = ({ name, image, symbol, price, rank, priceChange}) => {
         </thead>
         <tbody>
           <tr>
-            <td><p>#{rank}</p></td>
+            <td>#{rank}</td>
             <td><img src={image} alt="crypto" className="CryptoImage"></img></td>
-            <td><h3>{name}</h3></td>
-            <td><p>{symbol}</p></td>
-            <td><p>${price}</p></td>
+            <td className="Cryptoname">{name}</td>
+            <td>{symbol}</td>
+            <td>${price}</td>
             {priceChange < 0 ? (
-              <p className="increase">{priceChange.toFixed(2)}%</p>
-            ) : (<p className="decrease">{priceChange.toFixed(2)}%</p>)
+              <td className="increase">{priceChange.toFixed(2)}%</td>
+            ) : (<td className="decrease">{priceChange.toFixed(2)}%</td>)
             }
           </tr>
         </tbody>

@@ -22,7 +22,7 @@
 .CryptoIntro {
   align-items: center;
   display: flex;
-  height: 30vh;
+  height: 15vh;
   font-family: 'Courier New', Courier, monospace;
   font-size: 30px;
   font-weight: bold;
@@ -31,6 +31,10 @@
 
 .CryptoImage {
   width: 80px;
+}
+
+.Cryptoname {
+  font-weight: bold;
 }
 
 .CurrencyContainer {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import { Alert, Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Alert, Button, Container, Navbar } from 'react-bootstrap';
 import CryptoCurrency from "../components/CryptoCurrency";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons';
@@ -13,19 +13,25 @@ function Home () {
   const [from, setFrom] = useState("USD");
   const [to, setTo] = useState("JPY");
   const [rate, setRate] = useState([]);
-  const [coins, setCoins] = useState([]);
+  const [allCoins, setAllCoins] = useState([]);
+  const [coins, setCoins] = useState(allCoins);
 
   useEffect(() => {
     axios
     .get(URL_Coin)
     .then(function (response) {
       console.log(response.data);
+      setAllCoins(response.data)
       setCoins(response.data)
     })
     .catch(function (error) {
       console.log(error)
     });
   }, [URL_Coin]);
+
+  const getRandomInt = (max) => {
+    return Math.floor(Math.random() * max);
+  }
 
   const getRate = (from, to) => {
     const URL_Cur = `https://free.currconv.com/api/v7/convert?q=${from}_${to}&compact=ultra&apiKey=${API_KEY}`;
@@ -38,28 +44,31 @@ function Home () {
     .catch(function (error) {
       console.log(error)
     });
+    
+    const randomNum = getRandomInt(allCoins.length);
+
+    const coin = allCoins[randomNum]
+    setCoins([coin])
   }
 
   return (
     <Container>
       <Navbar fixed="top" expand="lg" bg="light" className="Navigation">
         <Navbar.Brand href="home">Midterm Project</Navbar.Brand>
-        <Nav.Link href="#CurrencyContainer">Currency Exchange Rate</Nav.Link>
-        <Nav.Link href="#CryptoIntro">Cryptocurrency</Nav.Link>
       </Navbar>
         <Container className="Intro">
-          <p>Welcome to my midterm project webpage...</p>
+          <p>Welcome to my midterm project webpage... When you use the currency converter, it shows the conversion result and one random cryptocurrency from the list...</p>
           <FontAwesomeIcon className="Icon" icon={faArrowAltCircleDown} size="2x"/>
         </Container>
-        <Container fluid="md" className="CurrencyContainer" id="CurrencyContainer">
+        <Container fluid="md" className="CurrencyContainer">
           <h1 className="CurrencyHeader">Currency Converter</h1>
           <h2>1 {from} = {rate[`${from}_${to}`]} {to}</h2>
           <input className="CurrencyInput" type="text" value={from} onChange={(e) => setFrom(e.target.value)} />
           <input className="CurrencyInput" type="text" value={to} onChange={(e) => setTo(e.target.value)}/>
-          <Button size="sm" onClick={()=> {getRate(from, to);}}>Convert Currency</Button>
-          <Alert variant="light">Type currency into the textbox and then click the convert button.</Alert>
+          <Button size="sm" onClick={()=> {getRate(from, to);}}>Click!</Button>
+          <Alert variant="light">Type currency into the textbox and then click the button.</Alert>
         </Container>
-        <Container className="CryptoIntro" id="CryptoIntro">
+        <Container className="CryptoIntro">
           <p>Cryptocurrency</p>
         </Container>
         <Container>

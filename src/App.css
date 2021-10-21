@@ -4,6 +4,21 @@
   padding: 0 25px;
 }
 
+.Buttons {
+  align-items: center;
+  display: flex;
+  height: 15vh;
+  justify-content: center;
+}
+
+.Button1 {
+  margin: 50px;
+}
+
+.Button2 {
+  margin: 50px;
+}
+
 .Navigation {
   background-color: transparent;
   padding: 50px;
@@ -57,11 +72,11 @@
   margin: 20px;
 }
 
-.increase {
+.Increase {
   color: red;
 }
 
-.decrease {
+.Decrease {
   color: green;
 }
 
@@ -69,11 +84,4 @@
   align-items: center;
   bottom: 10px;
   position: absolute;
-}
-
-.MainButton {
-  align-items: center;
-  display: flex;
-  height: 15vh;
-  justify-content: center;
 }

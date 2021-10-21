@@ -23,8 +23,8 @@ const CryptoCurrency = ({ name, image, symbol, price, rank, priceChange}) => {
             <td>{symbol}</td>
             <td>${price}</td>
             {priceChange < 0 ? (
-              <td className="increase">{priceChange.toFixed(2)}%</td>
-            ) : (<td className="decrease">{priceChange.toFixed(2)}%</td>)
+              <td className="Increase">{priceChange.toFixed(2)}%</td>
+            ) : (<td className="Decrease">{priceChange.toFixed(2)}%</td>)
             }
           </tr>
         </tbody>

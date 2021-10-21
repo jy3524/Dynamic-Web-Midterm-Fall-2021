@@ -50,6 +50,10 @@ function Home () {
     setCoins([coin]);
   }
 
+  const refresh = () => {
+    window.location.reload();
+  }
+
   return (
     <Container>
       <Navbar fixed="top" expand="lg" bg="light" className="Navigation">
@@ -67,8 +71,9 @@ function Home () {
           <input className="CurrencyInput" type="text" value={to} onChange={(e) => setTo(e.target.value)}/>
           <Alert variant="light">Type desired currency into the textbox and then click the button.</Alert>
         </Container>
-        <Container className="MainButton">
-          <Button size="lg" onClick={()=> {getRate(from, to);}}>Click!</Button>
+        <Container className="Buttons">
+          <Button className="Button1" size="lg" onClick={()=> {getRate(from, to);}}>Click!</Button>
+          <Button className="Button2" size="lg" onClick={refresh}>Restart!</Button>
         </Container>
         <Container className="CryptoIntro">
           <p>Cryptocurrency</p>

@@ -19,21 +19,6 @@
   margin: 50px;
 }
 
-.Navigation {
-  background-color: transparent;
-  padding: 50px;
-}
-
-.Intro {
-  align-items: center;
-  display: flex;
-  height: 100vh;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 30px;
-  font-weight: bold;
-  justify-content: center;
-}
-
 .CryptoIntro {
   align-items: center;
   display: flex;
@@ -72,16 +57,31 @@
   margin: 20px;
 }
 
-.Increase {
-  color: red;
-}
-
 .Decrease {
   color: green;
+}
+
+.Increase {
+  color: red;
 }
 
 .Icon {
   align-items: center;
   bottom: 10px;
   position: absolute;
+}
+
+.Intro {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  font-weight: bold;
+  justify-content: center;
+}
+
+.Navigation {
+  background-color: transparent;
+  padding: 50px;
 }

@@ -72,7 +72,7 @@ function Home () {
           <Alert variant="light">Type desired currency into the textbox and then click the button.</Alert>
         </Container>
         <Container className="Buttons">
-          <Button className="Button1" size="lg" onClick={()=> {getRate(from, to);}}>Click!</Button>
+          <Button className="Button1" size="lg" onClick={()=>{getRate(from, to);}}>Click!</Button>
           <Button className="Button2" size="lg" onClick={refresh}>Restart!</Button>
         </Container>
         <Container className="CryptoIntro">
